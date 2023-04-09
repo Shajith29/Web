@@ -10,12 +10,15 @@ lables.forEach(label => {
 function validateForm(){  
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-if(email.value == "" || email.value == null){
-    alert("Email cannot be null");
+let emailVal = email.value;
+let atposition = emailVal.indexOf("@");
+let dotposition = emailVal.lastIndexOf(".");
+if(atposition < 1 || dotposition < atposition +2 || dotposition + 2 >= emailVal.length){
+    document.getElementById("email-war").innerText = "Please Enter a valid Email";
     return false;
 }
 
-else if(password.value.length < 6){
+ if(password.value.length < 6){
     document.getElementById("password-war").innerText = "Password must be atleast 6 characters in length"
     return false;
 }
