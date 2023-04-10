@@ -123,7 +123,7 @@ span{
 
 .form-control input:focus + label span,
 .form-control input:valid + label span{
-    color: lightblue;
+    color: #f43535;
     transform: translateY(-30px);
 }
 
